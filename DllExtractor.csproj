@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5418ECB-E0A6-4B15-A5B8-A552467FE89A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DllExtractor</RootNamespace>
+    <AssemblyName>DllExtractor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.BonusSkins.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Charts.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.CodeParser.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Data.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.DataAccess.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.2.UI">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.DataAccess.v18.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Diagram.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Docs.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Images.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Office.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Pdf.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Drawing">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Pdf.v18.2.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.PivotGrid.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Printing.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.RichEdit.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.2.Export">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.RichEdit.v18.2.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Snap.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Snap.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Sparkline.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Spreadsheet.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Utils.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2.UI">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Utils.v18.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.Xpo.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraBars.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraCharts.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.Extensions">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraCharts.v18.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.UI">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraCharts.v18.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraCharts.v18.2.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraDiagram.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraEditors.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraGauges.v18.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v18.2.Win">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraGauges.v18.2.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraGrid.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraLayout.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraNavBar.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraPivotGrid.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraPrinting.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraReports.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.2.Extensions">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraReports.v18.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraRichEdit.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraTreeList.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2">
+      <HintPath>..\..\hyrexab\avontus libs\DevExpress.XtraVerticalGrid.v18.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DYMO.CrossPlatform.Common">
+      <HintPath>..\..\hyrexab\avontus libs\DYMO.CrossPlatform.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DYMO.CrossPlatform.Common.PlatformSpecific">
+      <HintPath>..\..\hyrexab\avontus libs\DYMO.CrossPlatform.Common.PlatformSpecific.dll</HintPath>
+    </Reference>
+    <Reference Include="DYMO.LabelAPI">
+      <HintPath>..\..\hyrexab\avontus libs\DYMO.LabelAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DYMO.LabelAPI.PlatformSpecific">
+      <HintPath>..\..\hyrexab\avontus libs\DYMO.LabelAPI.PlatformSpecific.dll</HintPath>
+    </Reference>
+    <Reference Include="DymoSDK">
+      <HintPath>..\..\hyrexab\avontus libs\DymoSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel">
+      <HintPath>..\..\hyrexab\avontus libs\IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonSubTypes">
+      <HintPath>..\..\hyrexab\avontus libs\JsonSubTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects">
+      <HintPath>..\..\hyrexab\avontus libs\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB">
+      <HintPath>..\..\hyrexab\avontus libs\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit">
+      <HintPath>..\..\hyrexab\avontus libs\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.MSXML, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.MSXML.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common.resources">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.Common.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization.resources">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.DataVisualization.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms.resources">
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.ReportViewer.WinForms.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit">
+      <HintPath>..\..\hyrexab\avontus libs\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nsoftware.InQB">
+      <HintPath>..\..\hyrexab\avontus libs\nsoftware.InQB.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\hyrexab\avontus libs\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\..\hyrexab\avontus libs\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Desktop">
+      <HintPath>..\..\hyrexab\avontus libs\SkiaSharp.Views.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.Gtk">
+      <HintPath>..\..\hyrexab\avontus libs\SkiaSharp.Views.Gtk.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp.Views.WPF">
+      <HintPath>..\..\hyrexab\avontus libs\SkiaSharp.Views.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartAssembly.ReportUsage">
+      <HintPath>..\..\hyrexab\avontus libs\SmartAssembly.ReportUsage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>..\..\hyrexab\avontus libs\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\hyrexab\avontus libs\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xero.NetStandard.OAuth2">
+      <HintPath>..\..\hyrexab\avontus libs\Xero.NetStandard.OAuth2.dll</HintPath>
+    </Reference>
+    <Reference Include="Xero.NetStandard.OAuth2Client">
+      <HintPath>..\..\hyrexab\avontus libs\Xero.NetStandard.OAuth2Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
