@@ -33,7 +33,6 @@ namespace ConvertFrameworkLibrary
 
                         if (string.IsNullOrEmpty(typeName))
                         {
-                            // Hantera anonyma typer genom att ge dem ett beskrivande namn
                             typeName = "AnonymousType_" + Guid.NewGuid();
                         }
 
@@ -44,7 +43,10 @@ namespace ConvertFrameworkLibrary
 
                         using (StreamWriter writer = new StreamWriter($"{assembly.FullName.Split(',')[0]}\\{fileName}"))
                         {
-                            writer.WriteLine(typeName);
+                            writer.WriteLine($"namespace {@namespace}");
+                            writer.WriteLine("{");
+                            writer.WriteLine($"\t{GetVisibility(type)} {GetModifier(type)} {typeName}");
+                            writer.WriteLine("\t{");
 
                             PropertyInfo[] properties = type.GetProperties();
                             foreach (PropertyInfo property in properties)
@@ -64,6 +66,8 @@ namespace ConvertFrameworkLibrary
                                     writer.WriteLine($"    {parameter.ParameterType.FullName} {parameter.Name}");
                                 }
                             }
+                            writer.WriteLine("\t}");
+                            writer.WriteLine("}");
                         }
 
                         Console.WriteLine($"Innehållet för typen {typeName} har skrivits till filen: {fileName}");
@@ -103,6 +107,41 @@ namespace ConvertFrameworkLibrary
         {
             char[] invalidChars = Path.GetInvalidFileNameChars();
             return new string(input.Where(c => !invalidChars.Contains(c)).ToArray());
+        }
+        static string GetVisibility(Type type)
+        {
+            if (type.IsPublic)
+            {
+                return "public";
+            }
+            else if (type.IsNotPublic)
+            {
+                return "internal"; // Byt ut mot andra relevanta modifierare om så önskas
+            }
+            else
+            {
+                return "unknown"; // Hantera andra fall om nödvändigt
+            }
+        }
+
+        static string GetModifier(Type type)
+        {
+            if (type.IsSealed && type.IsAbstract)
+            {
+                return "static";
+            }
+            else if (type.IsAbstract)
+            {
+                return "abstract";
+            }
+            else if (type.IsSealed)
+            {
+                return "sealed";
+            }
+            else
+            {
+                return "class"; // Standard modifier om inget av ovanstående gäller
+            }
         }
     }
 }
